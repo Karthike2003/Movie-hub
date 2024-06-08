@@ -1,0 +1,128 @@
+.navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 104px;
+    background-color: black;
+    z-index: 10; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding-left: 24px;
+    padding-right: 24px; 
+  }
+  
+  .navbar-left {
+    margin-left: 100px;
+    width: 648px; 
+    background-color: #fd7e14; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+  }
+  
+  .navbar-left-logo {
+    width: 148px; 
+    height: 32px;
+    background-color: #2ecc71;
+    display:  flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 4px;
+  }
+  
+  .navbar-left-logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    background-color: #ff0059; 
+  }
+  
+  /* .navbar-left-logo-icon::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 9999px;
+    background-color: white;
+   
+  } */
+  
+  .navbar-left-logo-text {
+    width: 108px; 
+    height: 24px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem; 
+    font-weight: bold;
+    line-height: 1.25;
+  }
+  
+  .search-container { 
+    display: flex; 
+    width: 476px; 
+    height: 40px; 
+    background-color: #072d27; 
+    border-radius: 4px; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  
+  .search-input-container { 
+    display: flex; 
+    width: 448px;
+    height: 24px; 
+    background-color: white; 
+    align-items: center; 
+  }
+  
+  .search-icon { 
+    width: 20px; 
+    height: 20px; 
+    background-color: #6f42c1; 
+  }
+  
+  .search-input { 
+    width: 448px; 
+    height: 24px; 
+    font-size: 1rem; 
+    font-weight: normal; 
+    line-height: 1.25; 
+    background-color: white; 
+    border: none; 
+    border-radius: 4px;
+    padding: 0 4px; 
+  }
+  
+  
+ 
+  
+  .navbar-right {
+    margin-right: 100px; 
+    width: 120px; 
+    background-color: #ff0059; 
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px; /
+  }
+  
+  .navbar-right-icon {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+  }
+  
+  .navbar-right-text {
+    width: 93px;
+    height: 24px;
+    font-size: 0.875rem; 
+    background-color: white;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  

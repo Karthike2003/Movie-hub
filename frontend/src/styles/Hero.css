@@ -1,0 +1,52 @@
+.hero {
+    display: flex; /* Make Hero component a flex container */
+    height: 100vh; /* Set height to 100% viewport height */
+    width: 100vw; /* Set width to 100% viewport width */
+    background-color: #0099cc; /* Cyan-600 */
+    margin-top: 104px; /* Adjust margin-top based on navbar height */
+    align-items: center; /* Align content vertically in center */
+    justify-content: center; /* Align content horizontally in center */
+  }
+  
+  .hero-image-container {
+    width: 1243px; /* Adjust width based on design preferences */
+    height: 658px; /* Adjust height based on design preferences */
+    border-radius: 20px; /* Set rounded corners */
+    position: relative; /* Enable absolute positioning for child elements */
+  }
+  
+  .hero-image {
+    width: 100%; /* Span full width of container */
+    height: 100%; /* Span full height of container */
+    object-fit: cover; /* Ensure image covers the entire container */
+    border-radius: 20px; /* Inherit rounded corners from container */
+  }
+  
+  .hero-overlay-orange {
+    position: absolute; /* Position element absolutely within container */
+    margin: 16px; /* Add margin for spacing */
+    bottom: 90px; /* Position from bottom edge */
+    width: 347.9px; /* Adjust width based on design preferences */
+    height: 272px; /* Adjust height based on design preferences */
+    background-color: #fd7e14; /* Orange-500 */
+  }
+  
+  .hero-overlay-white-top {
+    position: absolute; /* Position element absolutely within container */
+    margin-left: 16px; /* Add margin for spacing */
+    top: 280px; /* Position from top edge */
+    width: 404px; /* Adjust width based on design preferences */
+    height: 112px; /* Adjust height based on design preferences */
+    background-color: white;
+  }
+  
+  .hero-overlay-white-bottom {
+    position: absolute; /* Position element absolutely within container */
+    margin-left: 16px; /* Add margin for spacing */
+    bottom: 106px; /* Position from bottom edge */
+    width: 147px; /* Adjust width based on design preferences */
+    height: 40px; /* Adjust height based on design preferences */
+    background-color: white;
+    border-radius: 4px; /* Set rounded corners */
+  }
+  
