@@ -3,7 +3,7 @@
     height: 100vh; /* Set height to 100% viewport height */
     width: 100vw; /* Set width to 100% viewport width */
     background-color: #0099cc; /* Cyan-600 */
-    margin-top: 104px; /* Adjust margin-top based on navbar height */
+    margin-top: 84px; /* Adjust margin-top based on navbar height */
     align-items: center; /* Align content vertically in center */
     justify-content: center; /* Align content horizontally in center */
   }
