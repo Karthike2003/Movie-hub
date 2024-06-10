@@ -1,13 +1,20 @@
 .movie-grid {
+    
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
     background-color: #94a3b8;
     margin: 0 72px;
     justify-content: space-around;
+    
   }
+
+
   
   .movie-card {
+    
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 8px;
     gap: 80px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -34,7 +41,7 @@
     position: absolute;
     top: 8px;
     right: 8px;
-    background-color: #facc15; /* Tailwind bg-yellow-400 equivalent */
+    background-color: white; /* Tailwind bg-yellow-400 equivalent */
     border-radius: 50%;
     display: flex;
     justify-content: center;
