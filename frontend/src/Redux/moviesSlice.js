@@ -1,4 +1,4 @@
-// redux/moviesSlice.js
+
 import { createSlice } from '@reduxjs/toolkit';
 import moviesData from '../data/movies.json';
 
@@ -30,7 +30,7 @@ export const { fetchMoviesStart, fetchMoviesSuccess, fetchMoviesFailure } = movi
 export const fetchMovies = () => async dispatch => {
   dispatch(fetchMoviesStart());
   try {
-    // Simulating a fetch request with static data
+    
     const data = moviesData;
     dispatch(fetchMoviesSuccess(data));
   } catch (error) {

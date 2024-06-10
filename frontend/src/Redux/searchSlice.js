@@ -1,48 +1,57 @@
-// redux/searchSlice.js
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+const API_KEY = '2f6af18e';
+const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
+
+const transformAPIData = (apiData) => {
+  return apiData.map((item) => ({
+    id: item.imdbID,
+    banner_image: item.Poster,
+    title: item.Title,
+    year: item.Year,
+    genre: item.Type === 'series' ? 'Series' : 'Movie', 
+  }));
+};
+
+export const fetchMovies = createAsyncThunk('search/fetchMovies', async (searchQuery, thunkAPI) => {
+  const response = await fetch(`${API_URL}&s=${searchQuery}`);
+  const data = await response.json();
+  if (data.Response === 'True') {
+    return transformAPIData(data.Search);
+  } else {
+    return thunkAPI.rejectWithValue(data.Error);
+  }
+});
 
 const searchSlice = createSlice({
   name: 'search',
   initialState: {
-    query: '',
-    results: [],
+    searchQuery: '',
+    searchResults: [],
     isLoading: false,
-    error: null
+    error: null,
   },
   reducers: {
-    searchStart(state) {
-      state.isLoading = true;
-      state.error = null;
-    },
-    searchSuccess(state, action) {
-      state.results = action.payload;
-      state.isLoading = false;
-    },
-    searchFailure(state, action) {
-      state.error = action.payload;
-      state.isLoading = false;
-    },
     setSearchQuery(state, action) {
-      state.query = action.payload;
-    }
-  }
+      state.searchQuery = action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMovies.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchMovies.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.searchResults = action.payload;
+      })
+      .addCase(fetchMovies.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
+  },
 });
 
-export const { searchStart, searchSuccess, searchFailure, setSearchQuery } = searchSlice.actions;
-
-export const searchMovies = (query) => async dispatch => {
-  dispatch(searchStart());
-  try {
-    const response = await fetch(`https://www.omdbapi.com/?apikey=2f6af18e&s=${query}`);
-    const data = await response.json();
-    if (data.Response === 'True') {
-      dispatch(searchSuccess(data.Search));
-    } else {
-      dispatch(searchFailure(data.Error));
-    }
-  } catch (error) {
-    dispatch(searchFailure(error.toString()));
-  }
-};
-
+export const { setSearchQuery } = searchSlice.actions;
 export default searchSlice.reducer;

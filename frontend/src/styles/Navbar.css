@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw; 
     height: 104px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     z-index: 10; 
     display: flex;
     align-items: center;
@@ -16,7 +16,7 @@
   .navbar-left {
     margin-left: 100px;
     width: 648px; 
-    background-color: #fd7e14; 
+    background-color: rgba(255, 255, 255); 
     height: 40px;
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@
   .navbar-left-logo {
     width: 148px; 
     height: 32px;
-    background-color: #2ecc71;
+    background-color: rgba(255, 255, 255, 0.668);
     display:  flex;
     align-items: center;
     justify-content: space-between; 
@@ -49,14 +49,7 @@
     margin-top: 4px;
     margin-left: 4px;
   }
-  /* .navbar-left-logo-icon::after {
-    content: "";
-    width: 16px;
-    height: 16px;
-    border-radius: 9999px;
-    background-color: white;
-   
-  } */
+ 
   
   .navbar-left-logo-text {
     width: 108px; 
@@ -65,7 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.875rem; 
+    font-size: 1.25rem; 
     font-weight: bold;
     line-height: 1.25;
   }
@@ -73,6 +66,7 @@
 
   
   .search-input-container { 
+    position: relative;
     display: flex; 
     width: 448px;
     height: 24px; 
@@ -81,21 +75,28 @@
   }
   
   .search-icon { 
+    position: absolute;
     width: 20px; 
     height: 20px; 
-    background-color: #6f42c1; 
+    background-color: white; 
+    margin-left: 5px;
+    margin-top: 5px;
   }
   
   .search-input { 
     width: 448px; 
-    height: 24px; 
+    height: 34px; 
     font-size: 1rem; 
     font-weight: normal; 
     line-height: 1.25; 
     background-color: white; 
     border: none; 
     border-radius: 4px;
-    padding: 0 4px; 
+    padding: 0 25px; 
+    box-sizing: border-box;
+   
+    border: 2px solid lightgray;
+    outline: none;
   }
   
   
@@ -154,7 +155,7 @@
 
 
 .search-results::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar */
+  display: none; 
 }
 
 .search-results {
@@ -192,10 +193,9 @@
   flex: 1;
 }
 
-/* Adjust navbar layout */
 .navbar-left {
   margin-left: 100px;
-  width: calc(100% - 696px); /* Adjusted width for search container */
+  width: calc(100% - 696px); 
 }
 
 .navbar-right {
@@ -209,7 +209,7 @@
   padding: 0 24px;
 }
 .search-results::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar width */
-  height: 0; /* Remove scrollbar height */
-  background: transparent; /* Set scrollbar background to transparent */
+  width: 0;  
+  height: 0; 
+  background: transparent; 
 }

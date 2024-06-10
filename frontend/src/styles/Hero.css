@@ -1,52 +1,85 @@
 .hero {
-    display: flex; /* Make Hero component a flex container */
-    height: 100vh; /* Set height to 100% viewport height */
-    width: 100vw; /* Set width to 100% viewport width */
-    background-color: #0099cc; /* Cyan-600 */
-    margin-top: 84px; /* Adjust margin-top based on navbar height */
-    align-items: center; /* Align content vertically in center */
-    justify-content: center; /* Align content horizontally in center */
+    display: flex;
+    height: 100vh; 
+    width: 100vw; 
+    background-color: white;
+    margin-top: 84px;
+    align-items: center; 
+    justify-content: center; 
   }
   
   .hero-image-container {
-    width: 1243px; /* Adjust width based on design preferences */
-    height: 658px; /* Adjust height based on design preferences */
-    border-radius: 20px; /* Set rounded corners */
-    position: relative; /* Enable absolute positioning for child elements */
+    width: 1243px; 
+    height: 658px; 
+    border-radius: 20px; 
+    position: relative; 
   }
   
   .hero-image {
-    width: 100%; /* Span full width of container */
-    height: 100%; /* Span full height of container */
-    object-fit: cover; /* Ensure image covers the entire container */
-    border-radius: 20px; /* Inherit rounded corners from container */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 20px; /
   }
   
   .hero-overlay-orange {
-    position: absolute; /* Position element absolutely within container */
-    margin: 16px; /* Add margin for spacing */
-    bottom: 90px; /* Position from bottom edge */
-    width: 347.9px; /* Adjust width based on design preferences */
-    height: 272px; /* Adjust height based on design preferences */
-    background-color: #fd7e14; /* Orange-500 */
+    position: absolute;
+    margin: 16px; 
+    bottom: 90px; 
+    width: 347.9px; 
+    height: 272px;
+    background-color: transparent; 
+    justify-content: center;
+    align-items: center;
   }
-  
+  .para{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 120px;
+    margin-left: 2px;
+  }
+  .playbutton{
+
+    color:#ff0059;
+    font-size: 23px;
+    margin-top: 3px;
+    margin-left: 2px;
+    
+  }
   .hero-overlay-white-top {
-    position: absolute; /* Position element absolutely within container */
-    margin-left: 16px; /* Add margin for spacing */
-    top: 280px; /* Position from top edge */
-    width: 404px; /* Adjust width based on design preferences */
-    height: 112px; /* Adjust height based on design preferences */
-    background-color: white;
+    position: absolute; 
+    margin-left: 16px; 
+    top: 280px; 
+    width: 404px; 
+    height: 112px;
+    background-color: transparent;
   }
-  
+  .watch{
+    margin-left: 2px;
+  }
   .hero-overlay-white-bottom {
-    position: absolute; /* Position element absolutely within container */
-    margin-left: 16px; /* Add margin for spacing */
-    bottom: 106px; /* Position from bottom edge */
-    width: 147px; /* Adjust width based on design preferences */
-    height: 40px; /* Adjust height based on design preferences */
+    display: flex;
+    position: absolute; 
+    margin-left: 16px; 
+    bottom: 106px; 
+    width: 147px; 
+    height: 40px; 
     background-color: white;
-    border-radius: 4px; /* Set rounded corners */
+    border-radius: 4px; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }
-  
+  .heading{
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .invisible-anchor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }

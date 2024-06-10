@@ -1,34 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Movie from './Movie';
-import moviesData from '../data/movies.json';
+// import moviesData from '../data/movies.json';
+import { fetchMovies } from '../Redux/moviesSlice';
 import '../styles/MovieList.css';
+import { useDispatch, useSelector } from 'react-redux';
 
 function MovieList() {
-  const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+  const { items: movies, isLoading, error } = useSelector(state => state.movies);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      setIsLoading(true);
-      try {
-        setMovies(moviesData);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchMovies();
-  }, []);
+    dispatch(fetchMovies());
+  }, [dispatch]);
 
   return (
     <div className="movie-list">
       {isLoading ? (
         <p>Loading movies...</p>
       ) : error ? (
-        <p hidden>Error fetching movies: {error.message}</p>
+        <p>Error fetching movies: {error}</p>
       ) : (
         <ul className="movie-grid">
           {movies.map((movie) => (
