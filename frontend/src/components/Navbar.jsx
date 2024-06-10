@@ -49,12 +49,12 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className="navbar-right">
+      {/* <div className="navbar-right">
         <div className="navbar-right-icon">
           <IoMdHeart className="heart" />
         </div>
         <div className="navbar-right-text">My Favourites</div>
-      </div>
+      </div> */}
       <div className="search-results">
         {isLoading ? (
           <p>Loading...</p>
